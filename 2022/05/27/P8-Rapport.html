@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Introduction au Deep Learning | Teïlo Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Introduction au Deep Learning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Explorer la data science" />
+<meta property="og:description" content="Explorer la data science" />
+<link rel="canonical" href="https://teilomillet.github.io/pages/2022/05/27/P8-Rapport.html" />
+<meta property="og:url" content="https://teilomillet.github.io/pages/2022/05/27/P8-Rapport.html" />
+<meta property="og:site_name" content="Teïlo Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-27T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Introduction au Deep Learning" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-27T00:00:00-05:00","datePublished":"2022-05-27T00:00:00-05:00","description":"Explorer la data science","headline":"Introduction au Deep Learning","mainEntityOfPage":{"@type":"WebPage","@id":"https://teilomillet.github.io/pages/2022/05/27/P8-Rapport.html"},"url":"https://teilomillet.github.io/pages/2022/05/27/P8-Rapport.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/pages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://teilomillet.github.io/pages/feed.xml" title="Teïlo Blog" /><link rel="shortcut icon" type="image/x-icon" href="/pages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/pages/">Teïlo Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/pages/about/">About Me</a><a class="page-link" href="/pages/search/">Search</a><a class="page-link" href="/pages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Introduction au Deep Learning</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-27T00:00:00-05:00" itemprop="datePublished">
+        May 27, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      20 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/teilomillet/pages/tree/master/_notebooks/2022-05-27-P8-Rapport.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/pages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/teilomillet/pages/master?filepath=_notebooks%2F2022-05-27-P8-Rapport.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/pages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/teilomillet/pages/blob/master/_notebooks/2022-05-27-P8-Rapport.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/pages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fteilomillet%2Fpages%2Fblob%2Fmaster%2F_notebooks%2F2022-05-27-P8-Rapport.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/pages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-05-27-P8-Rapport.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">fastbook</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">fastai</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Remerciement">Remerciement<a class="anchor-link" href="#Remerciement"> </a></h1><p>Je tiens tout d'abord à remercier OpenClassrooms pour m'avoir fait confiance et permis d'apprendre la Data Analyse pendant près d'un an. De m'avoir fourni les outils et la connaissance afin que je me develloppe.</p>
+<p>En second lieu, Monsieur Christian Noumsi, qui a été mon mentor durant cette période. Sans ces précieux conseils et suggestion, je n'aurais probablement pas appris autant que je l'ai fait durant cette période. Son soutien et sa compréhension, m'auront été d'une grande aide tout au long de mon parcours.</p>
+<p>Je dédis ce rapport à ma compagne qui aura été ma premiere supportrice et conseillère. Je la remercie pour le temps qu'elle m'a accordé afin que je m'entraine durant mes présentations. J'espere qu'elle apprendra autant que j'ai pu le faire avec ce rapport.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h1><p>Beaucoup de personnes ont entendu parler du Deep Learning, Machine Learning ou Réseau de Neurones. Mais peu savent ce que cela veut réellement dire. Qu'elle est la différence entre ces termes, sont ils connectés ou bien sont il totalement différents?</p>
+<p>Avec ce rapport, je vais essayer de démystifier les termes et de les expliquer. Nous allons tout d'abord, parler de l'histoire derièrre ces termes, leur signification et l'evolution que la thématique à connu au cours des années. Nous décortiquerons comment marche un modèle de Deep Learning et les diffférentes étapes qui le compose.</p>
+<p>Dans la deuxième partie, nous verrons comment la machine peu apprendre et s'améliorer. Nous utiliserons un exemple concret pour expliquer la Descente de Gradient et l'ajustement d'un modèle.</p>
+<p>Pour finir, nous verrons les termes qui entoure le machine learning et nous les définirons.</p>
+<p>Le but de ce rapport est de vérifier ma connaissance et compréhension dans la matière avant de continuer dans le domaine.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Les-fondamentaux">Les fondamentaux<a class="anchor-link" href="#Les-fondamentaux"> </a></h1><p>Dans cette partie, nous allons voir les origines du Réseau de Neurones, du Deep Learning et du Machine Learning. Nous allons explorer les différences entre ces dernières et comprendre ce qui les caractérisent. En fin, nous allons découvrir comment ils marchent ainsi que les termes associés aux différentes étapes. A la fin de cette première partie, ce trouve un récapitulatif de ce qu'on aura vu dans cette partie, on y determinera aussi les limites du Deep Learning et les erreurs a ne pas commettre.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Origine-du-Deep-Learning">Origine du Deep Learning<a class="anchor-link" href="#Origine-du-Deep-Learning"> </a></h2><p>En 1943, dans "The bulletin of mathematical biphysics" sort le papier "A logical calculus of ideas immanent in nervous activity", écrit par Warren McCulloch et Walter Pitts. Leur objectif est de développer un model mathématique de neuronne artificiel.</p>
+<p>En 1957, Frank Rosenblatt, améliore ce model pour developper le Mark I Perceptron. Le but de sa création est une machine capable d'apprendre. La machine fonctionne grâce à des cables interconnectés entre eux, on y entre des nombres ainsi qu'un 'poids' (weights) et un 'biais' (bias). La machine ensuite multiplie les nombres saisies par leurs poids respectifs pour obtenir un résultat, ce résultat est additionné avec le biais pour obtenir un résultat final.</p>
+<p>Perceptron:
+ (saisie  * poids) + biais = résultat final.</p>
+<p>Par la suite, en 1969, les professeurs du MIT, Marvin Minsky et Seymour Papart démontre que le Mark I Perceptron ne parvient pas apprendre de simple fonction mathématique (XOR par exemple). Mais il montre aussi que le fait d'ajouter des couches supplémentaire permet d'améliorer ces résultats. Depuis, aucune nouveauté ou amélioration n'a été éffectué.</p>
+<p>Jusqu'en 1986, à la sortie de "Parallel Distributed Processing (PDP)" par le MIT Press. Dans ce livre, il est question d'un cadre de travail pour modéliser le processus cognitif. Par cela, il cherche à expliquer la raison pour laquelle l'ordinateur n'arrivent pas à obtenir les mêmes résultats que le cerveau humain, pour tache simple comme reconnaitre une image d'un chien de celle d'un chat. Le model PDP cherche à se rapprocher de la manière de penser du cerveau et par conséquent il est mieux adapter pour réaliser ce type de taches.</p>
+<p>Cette approche reste étroitement liée à celle encore effectuée aujourd'hui pour les réseaux de neuronnes. Le Parallel Distributed Processing est défini comme suit :</p>
+<ol>
+<li>Un ensemble d'unités à traiter</li>
+<li>Un état d'activation</li>
+<li>Une fonction de résultat pour chaque unités</li>
+<li>Un modèle de connectivité entre les unités</li>
+<li>Une règle de propagation </li>
+<li>Une règle d'activation </li>
+<li>Une règle d'apprentissage </li>
+<li>Un environnement dans lequel le système doit fonctionner</li>
+</ol>
+<p>Dans les années 80 et 90, les modèles de reseaux neuronnaux sont utilisés pour des cas pratiques. A cette époque, des chercheurs commencent à ajouter des couches (4. le modèle de connectivité entre les unités) au réseaux de neuronnes pour finalement obtenir le Deep Learning. Ainsi, le Deep Learning est un réseau de neuronnes qui comprend plus de 2 couches.</p>
+<p>Aujourd'hui, comme Rosenblatt le décrivait nous avons accès «à des machines capable de percevoir, reconnaitre et identifier son environnement sans l'aide de l'humain ou de son control.»</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Le-Machine-Learning">Le Machine Learning<a class="anchor-link" href="#Le-Machine-Learning"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Le Machine Learning, comme un programme informatique, à pour but de réaliser une tâche.</p>
+<p>De manière générale, un programme obéit à un certain nombre d'étapes. Ces étapes ont pour but d'arriver à un résultat final. Visuellement, voila à quoi cela pourrait ressembler:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gv</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;programme[shape=box3d width=1 height=0.7]</span>
+<span class="s1">entrées-&gt;programme-&gt;resultats&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+<!-- Generated by graphviz version 2.50.0 (20211204.2007)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="312pt" height="58pt" viewBox="0.00 0.00 312.09 58.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 54)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-54 308.09,-54 308.09,4 -4,4" />
+<!-- programme -->
+<g id="node1" class="node">
+<title>programme</title>
+<polygon fill="none" stroke="black" points="187.49,-50 111.49,-50 107.49,-46 107.49,0 183.49,0 187.49,-4 187.49,-50" />
+<polyline fill="none" stroke="black" points="183.49,-46 107.49,-46 " />
+<polyline fill="none" stroke="black" points="183.49,-46 183.49,0 " />
+<polyline fill="none" stroke="black" points="183.49,-46 187.49,-50 " />
+<text text-anchor="middle" x="147.49" y="-21.3" font-family="Times,serif" font-size="14.00">programme</text>
+</g>
+<!-- resultats -->
+<g id="node3" class="node">
+<title>resultats</title>
+<ellipse fill="none" stroke="black" cx="263.79" cy="-25" rx="40.09" ry="18" />
+<text text-anchor="middle" x="263.79" y="-21.3" font-family="Times,serif" font-size="14.00">resultats</text>
+</g>
+<!-- programme&#45;&gt;resultats -->
+<g id="edge2" class="edge">
+<title>programme&#45;&gt;resultats</title>
+<path fill="none" stroke="black" d="M187.51,-25C195.69,-25 204.43,-25 212.95,-25" />
+<polygon fill="black" stroke="black" points="213.17,-28.5 223.17,-25 213.17,-21.5 213.17,-28.5" />
+</g>
+<!-- entrées -->
+<g id="node2" class="node">
+<title>entrées</title>
+<ellipse fill="none" stroke="black" cx="35.75" cy="-25" rx="36" ry="18" />
+<text text-anchor="middle" x="35.75" y="-21.3" font-family="Times,serif" font-size="14.00">entrées</text>
+</g>
+<!-- entrées&#45;&gt;programme -->
+<g id="edge1" class="edge">
+<title>entrées&#45;&gt;programme</title>
+<path fill="none" stroke="black" d="M71.77,-25C79.8,-25 88.48,-25 96.99,-25" />
+<polygon fill="black" stroke="black" points="97.23,-28.5 107.23,-25 97.23,-21.5 97.23,-28.5" />
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En 1949, un chercheur de chez IBM, Arthur Samuel travail sur un programme qui permettrait par exemple aux ordinateurs de différencier les images de chats et de chiens. Ce fut la naissance du Machine Learning.</p>
+<p>Il immagine qu'au lieu de coder une à une les étapes requisent pour résoudre un probleme, il suffirait de présenter des exemples de problèmes résolus et laisser le programme trouver comment résoudre le problème par lui-même.</p>
+<p>En 1961, son programme de jeux de dames a battut le champion du Connecticut. Dans son essaie de 1962, "Artificial Intelligence: A Frontier of Automation", il décrit comment il a fait:</p>
+<p>«Supposons que nous disposions d'un moyen automatique de tester l'efficacité de toute attribution de poids actuelle en termes de performance réelle et que nous fournissions un mécanisme permettant de modifier l'attribution de poids de manière à maximiser la performance. Il n'est pas nécessaire d'entrer dans les détails d'une telle procédure pour constater qu'elle pourrait être entièrement automatique et qu'une machine ainsi programmée "apprendrait" de son expérience.»</p>
+<p>Un modèle produit un résultat, non seulement grâce aux entrées mais avec l'aide de poids, qui en fonction de leurs performance par rapport au résultat doivent etre ajuster de manière à maximiser la performance du modèle.</p>
+<p>Voici une représentation visuelle:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gv</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;modèle[shape=box3d width=1 height=0.7]</span>
+<span class="s1">entrées-&gt;modèle-&gt;resultats; poids-&gt;modèle&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+<!-- Generated by graphviz version 2.50.0 (20211204.2007)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="304pt" height="98pt" viewBox="0.00 0.00 304.09 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-94 300.09,-94 300.09,4 -4,4" />
+<!-- modèle -->
+<g id="node1" class="node">
+<title>modèle</title>
+<polygon fill="none" stroke="black" points="179.49,-70 111.49,-70 107.49,-66 107.49,-20 175.49,-20 179.49,-24 179.49,-70" />
+<polyline fill="none" stroke="black" points="175.49,-66 107.49,-66 " />
+<polyline fill="none" stroke="black" points="175.49,-66 175.49,-20 " />
+<polyline fill="none" stroke="black" points="175.49,-66 179.49,-70 " />
+<text text-anchor="middle" x="143.49" y="-41.3" font-family="Times,serif" font-size="14.00">modèle</text>
+</g>
+<!-- resultats -->
+<g id="node3" class="node">
+<title>resultats</title>
+<ellipse fill="none" stroke="black" cx="255.79" cy="-45" rx="40.09" ry="18" />
+<text text-anchor="middle" x="255.79" y="-41.3" font-family="Times,serif" font-size="14.00">resultats</text>
+</g>
+<!-- modèle&#45;&gt;resultats -->
+<g id="edge2" class="edge">
+<title>modèle&#45;&gt;resultats</title>
+<path fill="none" stroke="black" d="M179.7,-45C187.85,-45 196.68,-45 205.32,-45" />
+<polygon fill="black" stroke="black" points="205.33,-48.5 215.33,-45 205.33,-41.5 205.33,-48.5" />
+</g>
+<!-- entrées -->
+<g id="node2" class="node">
+<title>entrées</title>
+<ellipse fill="none" stroke="black" cx="35.75" cy="-72" rx="36" ry="18" />
+<text text-anchor="middle" x="35.75" y="-68.3" font-family="Times,serif" font-size="14.00">entrées</text>
+</g>
+<!-- entrées&#45;&gt;modèle -->
+<g id="edge1" class="edge">
+<title>entrées&#45;&gt;modèle</title>
+<path fill="none" stroke="black" d="M67.9,-64.05C77.22,-61.67 87.63,-59.01 97.65,-56.45" />
+<polygon fill="black" stroke="black" points="98.66,-59.8 107.48,-53.94 96.93,-53.02 98.66,-59.8" />
+</g>
+<!-- poids -->
+<g id="node4" class="node">
+<title>poids</title>
+<ellipse fill="none" stroke="black" cx="35.75" cy="-18" rx="29.8" ry="18" />
+<text text-anchor="middle" x="35.75" y="-14.3" font-family="Times,serif" font-size="14.00">poids</text>
+</g>
+<!-- poids&#45;&gt;modèle -->
+<g id="edge3" class="edge">
+<title>poids&#45;&gt;modèle</title>
+<path fill="none" stroke="black" d="M63.43,-24.81C73.75,-27.45 85.84,-30.54 97.43,-33.49" />
+<polygon fill="black" stroke="black" points="96.86,-36.96 107.42,-36.04 98.6,-30.18 96.86,-36.96" />
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Une fois le procédé d'ajustement des poids automatisé, la machine apprend (learn) de son expérience. Ainsi l'homme ne serait plus derière la machine pour modifier l'ajustement des poids mais celle-ci, le ferait automatiquement en se basant sur sa performance.</p>
+<p>La performance du modèle est mesuré grâce</p>
+<p>Durant sa phase d'entrainement, le modèle fait des estimations qu'il compare avec la finalité attendu. La différence entre l'estimation du modèle et la finalité attendu, s'appelle la performance. Ainsi le modèle ajuste ces poids en fonction de la performance précédemment obtenu, jusqu'a obtenir les poids qui donneront la meilleur performance possible ou que nous arretions l'entrainement du modèle.</p>
+<p>Visuellle representant le procédé d'entrainement d'un modèle de Machine Learning:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gv</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;ordering=in</span>
+<span class="s1">modèle[shape=box3d width=1 height=0.7]</span>
+<span class="s1">entrées-&gt;modèle-&gt;estimations; poids-&gt;modèle; estimations-&gt;performance</span>
+<span class="s1">performance-&gt;poids[constraint=false label=ajustement]&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+<!-- Generated by graphviz version 2.50.0 (20211204.2007)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="536pt" height="98pt" viewBox="0.00 0.00 535.97 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-94 531.97,-94 531.97,4 -4,4" />
+<!-- modèle -->
+<g id="node1" class="node">
+<title>modèle</title>
+<polygon fill="none" stroke="black" points="180.49,-77 112.49,-77 108.49,-73 108.49,-27 176.49,-27 180.49,-31 180.49,-77" />
+<polyline fill="none" stroke="black" points="176.49,-73 108.49,-73 " />
+<polyline fill="none" stroke="black" points="176.49,-73 176.49,-27 " />
+<polyline fill="none" stroke="black" points="176.49,-73 180.49,-77 " />
+<text text-anchor="middle" x="144.49" y="-48.3" font-family="Times,serif" font-size="14.00">modèle</text>
+</g>
+<!-- estimations -->
+<g id="node3" class="node">
+<title>estimations</title>
+<ellipse fill="none" stroke="black" cx="327.84" cy="-52" rx="51.19" ry="18" />
+<text text-anchor="middle" x="327.84" y="-48.3" font-family="Times,serif" font-size="14.00">estimations</text>
+</g>
+<!-- modèle&#45;&gt;estimations -->
+<g id="edge2" class="edge">
+<title>modèle&#45;&gt;estimations</title>
+<path fill="none" stroke="black" d="M180.89,-52C205.13,-52 237.88,-52 266.22,-52" />
+<polygon fill="black" stroke="black" points="266.44,-55.5 276.44,-52 266.44,-48.5 266.44,-55.5" />
+</g>
+<!-- entrées -->
+<g id="node2" class="node">
+<title>entrées</title>
+<ellipse fill="none" stroke="black" cx="35.75" cy="-72" rx="36" ry="18" />
+<text text-anchor="middle" x="35.75" y="-68.3" font-family="Times,serif" font-size="14.00">entrées</text>
+</g>
+<!-- entrées&#45;&gt;modèle -->
+<g id="edge1" class="edge">
+<title>entrées&#45;&gt;modèle</title>
+<path fill="none" stroke="black" d="M69.65,-65.84C78.74,-64.13 88.77,-62.25 98.42,-60.44" />
+<polygon fill="black" stroke="black" points="99.11,-63.88 108.3,-58.59 97.82,-57 99.11,-63.88" />
+</g>
+<!-- performance -->
+<g id="node5" class="node">
+<title>performance</title>
+<ellipse fill="none" stroke="black" cx="472.08" cy="-52" rx="55.79" ry="18" />
+<text text-anchor="middle" x="472.08" y="-48.3" font-family="Times,serif" font-size="14.00">performance</text>
+</g>
+<!-- estimations&#45;&gt;performance -->
+<g id="edge4" class="edge">
+<title>estimations&#45;&gt;performance</title>
+<path fill="none" stroke="black" d="M379.39,-52C387.88,-52 396.81,-52 405.61,-52" />
+<polygon fill="black" stroke="black" points="405.86,-55.5 415.86,-52 405.86,-48.5 405.86,-55.5" />
+</g>
+<!-- poids -->
+<g id="node4" class="node">
+<title>poids</title>
+<ellipse fill="none" stroke="black" cx="35.75" cy="-18" rx="29.8" ry="18" />
+<text text-anchor="middle" x="35.75" y="-14.3" font-family="Times,serif" font-size="14.00">poids</text>
+</g>
+<!-- poids&#45;&gt;modèle -->
+<g id="edge3" class="edge">
+<title>poids&#45;&gt;modèle</title>
+<path fill="none" stroke="black" d="M62.59,-26.23C73.4,-29.67 86.28,-33.78 98.55,-37.69" />
+<polygon fill="black" stroke="black" points="97.62,-41.06 108.21,-40.76 99.75,-34.39 97.62,-41.06" />
+</g>
+<!-- performance&#45;&gt;poids -->
+<g id="edge5" class="edge">
+<title>performance&#45;&gt;poids</title>
+<path fill="none" stroke="black" d="M434.01,-38.81C417.46,-33.52 397.57,-27.98 379.18,-25 270.48,-7.4 139.85,-11.6 75.9,-15.27" />
+<polygon fill="black" stroke="black" points="75.63,-11.78 65.86,-15.88 76.05,-18.77 75.63,-11.78" />
+<text text-anchor="middle" x="228.49" y="-17.8" font-family="Times,serif" font-size="14.00">ajustement</text>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Une fois l'entrainement terminé, les poids font partie intégrante du modèle, ils ne pourront plus etre modifiés. Nous donnant ainsi le graphique de départ, on remarque que seulement le mot "programme" à été changé par "modèle". Notre modèle agit donc mainteant comme un programme a part entière :</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gv</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;modèle[shape=box3d width=1 height=0.7]</span>
+<span class="s1">entrées-&gt;modèle-&gt;resultats&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+<!-- Generated by graphviz version 2.50.0 (20211204.2007)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="304pt" height="58pt" viewBox="0.00 0.00 304.09 58.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 54)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-54 300.09,-54 300.09,4 -4,4" />
+<!-- modèle -->
+<g id="node1" class="node">
+<title>modèle</title>
+<polygon fill="none" stroke="black" points="179.49,-50 111.49,-50 107.49,-46 107.49,0 175.49,0 179.49,-4 179.49,-50" />
+<polyline fill="none" stroke="black" points="175.49,-46 107.49,-46 " />
+<polyline fill="none" stroke="black" points="175.49,-46 175.49,0 " />
+<polyline fill="none" stroke="black" points="175.49,-46 179.49,-50 " />
+<text text-anchor="middle" x="143.49" y="-21.3" font-family="Times,serif" font-size="14.00">modèle</text>
+</g>
+<!-- resultats -->
+<g id="node3" class="node">
+<title>resultats</title>
+<ellipse fill="none" stroke="black" cx="255.79" cy="-25" rx="40.09" ry="18" />
+<text text-anchor="middle" x="255.79" y="-21.3" font-family="Times,serif" font-size="14.00">resultats</text>
+</g>
+<!-- modèle&#45;&gt;resultats -->
+<g id="edge2" class="edge">
+<title>modèle&#45;&gt;resultats</title>
+<path fill="none" stroke="black" d="M179.7,-25C187.85,-25 196.68,-25 205.32,-25" />
+<polygon fill="black" stroke="black" points="205.33,-28.5 215.33,-25 205.33,-21.5 205.33,-28.5" />
+</g>
+<!-- entrées -->
+<g id="node2" class="node">
+<title>entrées</title>
+<ellipse fill="none" stroke="black" cx="35.75" cy="-25" rx="36" ry="18" />
+<text text-anchor="middle" x="35.75" y="-21.3" font-family="Times,serif" font-size="14.00">entrées</text>
+</g>
+<!-- entrées&#45;&gt;modèle -->
+<g id="edge1" class="edge">
+<title>entrées&#45;&gt;modèle</title>
+<path fill="none" stroke="black" d="M71.67,-25C79.79,-25 88.56,-25 97.07,-25" />
+<polygon fill="black" stroke="black" points="97.25,-28.5 107.25,-25 97.25,-21.5 97.25,-28.5" />
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Machine Learning : L'entrainement de programmes qui ont été développés en permettant à un ordinateur d'apprendre de son expérience, plutôt qu'en codant manuellement les différentes étapes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion-de-la-Partie-1">Conclusion de la Partie 1<a class="anchor-link" href="#Conclusion-de-la-Partie-1"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pour la suite du rapport, nous utilisons d'autres termes pour parler de certaines choses:</p>
+<ul>
+<li>Les poids (et biais) sont appelés "parametres"</li>
+<li>Les prédictions sont calculés depuis les variables indépendantes, cad les données (sans inclure les labels)</li>
+<li>Les données que le modèle essaient de prédire sont appelés les labels</li>
+<li>Les resultats du modèle sont appelés "prédictions"</li>
+<li>La mesure de la performance que le modèle utilise durant son entrainement est appelé "perte"<ul>
+<li>La perte depend de la prédiction mais aussi de la variable dépendante (labels)</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Voici le visuel final, d'un modèle de Deep Learning :</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gv</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;ordering=in</span>
+<span class="s1">modèle[shape=box3d width=1 height=0.7 label=modèle]</span>
+<span class="s1">entrées-&gt;modèle-&gt;predictions; parametres-&gt;modèle; labels-&gt;pertes; predictions-&gt;pertes</span>
+<span class="s1">pertes-&gt;parametres[constraint=false label=ajustement]&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+<!-- Generated by graphviz version 2.50.0 (20211204.2007)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="514pt" height="134pt" viewBox="0.00 0.00 513.88 134.10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 130.1)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-130.1 509.88,-130.1 509.88,4 -4,4" />
+<!-- modèle -->
+<g id="node1" class="node">
+<title>modèle</title>
+<polygon fill="none" stroke="black" points="209.09,-79.1 141.09,-79.1 137.09,-75.1 137.09,-29.1 205.09,-29.1 209.09,-33.1 209.09,-79.1" />
+<polyline fill="none" stroke="black" points="205.09,-75.1 137.09,-75.1 " />
+<polyline fill="none" stroke="black" points="205.09,-75.1 205.09,-29.1 " />
+<polyline fill="none" stroke="black" points="205.09,-75.1 209.09,-79.1 " />
+<text text-anchor="middle" x="173.09" y="-50.4" font-family="Times,serif" font-size="14.00">modèle</text>
+</g>
+<!-- predictions -->
+<g id="node3" class="node">
+<title>predictions</title>
+<ellipse fill="none" stroke="black" cx="355.14" cy="-54.1" rx="50.09" ry="18" />
+<text text-anchor="middle" x="355.14" y="-50.4" font-family="Times,serif" font-size="14.00">predictions</text>
+</g>
+<!-- modèle&#45;&gt;predictions -->
+<g id="edge2" class="edge">
+<title>modèle&#45;&gt;predictions</title>
+<path fill="none" stroke="black" d="M209.23,-54.1C233.48,-54.1 266.31,-54.1 294.59,-54.1" />
+<polygon fill="black" stroke="black" points="294.78,-57.6 304.78,-54.1 294.78,-50.6 294.78,-57.6" />
+</g>
+<!-- entrées -->
+<g id="node2" class="node">
+<title>entrées</title>
+<ellipse fill="none" stroke="black" cx="50.05" cy="-74.1" rx="36" ry="18" />
+<text text-anchor="middle" x="50.05" y="-70.4" font-family="Times,serif" font-size="14.00">entrées</text>
+</g>
+<!-- entrées&#45;&gt;modèle -->
+<g id="edge1" class="edge">
+<title>entrées&#45;&gt;modèle</title>
+<path fill="none" stroke="black" d="M84.12,-68.63C97.3,-66.45 112.69,-63.91 126.87,-61.57" />
+<polygon fill="black" stroke="black" points="127.64,-64.99 136.94,-59.91 126.5,-58.08 127.64,-64.99" />
+</g>
+<!-- pertes -->
+<g id="node6" class="node">
+<title>pertes</title>
+<ellipse fill="none" stroke="black" cx="474.03" cy="-83.1" rx="31.7" ry="18" />
+<text text-anchor="middle" x="474.03" y="-79.4" font-family="Times,serif" font-size="14.00">pertes</text>
+</g>
+<!-- predictions&#45;&gt;pertes -->
+<g id="edge5" class="edge">
+<title>predictions&#45;&gt;pertes</title>
+<path fill="none" stroke="black" d="M396.69,-64.16C409.06,-67.23 422.6,-70.59 434.81,-73.61" />
+<polygon fill="black" stroke="black" points="434.14,-77.05 444.69,-76.07 435.82,-70.26 434.14,-77.05" />
+</g>
+<!-- parametres -->
+<g id="node4" class="node">
+<title>parametres</title>
+<ellipse fill="none" stroke="black" cx="50.05" cy="-20.1" rx="50.09" ry="18" />
+<text text-anchor="middle" x="50.05" y="-16.4" font-family="Times,serif" font-size="14.00">parametres</text>
+</g>
+<!-- parametres&#45;&gt;modèle -->
+<g id="edge3" class="edge">
+<title>parametres&#45;&gt;modèle</title>
+<path fill="none" stroke="black" d="M90.01,-31.04C101.78,-34.35 114.8,-38.01 126.94,-41.42" />
+<polygon fill="black" stroke="black" points="126.31,-44.87 136.88,-44.21 128.2,-38.13 126.31,-44.87" />
+</g>
+<!-- labels -->
+<g id="node5" class="node">
+<title>labels</title>
+<ellipse fill="none" stroke="black" cx="355.14" cy="-108.1" rx="31.4" ry="18" />
+<text text-anchor="middle" x="355.14" y="-104.4" font-family="Times,serif" font-size="14.00">labels</text>
+</g>
+<!-- labels&#45;&gt;pertes -->
+<g id="edge4" class="edge">
+<title>labels&#45;&gt;pertes</title>
+<path fill="none" stroke="black" d="M384.73,-101.98C399.48,-98.83 417.69,-94.93 433.74,-91.5" />
+<polygon fill="black" stroke="black" points="434.87,-94.84 443.92,-89.32 433.41,-87.99 434.87,-94.84" />
+</g>
+<!-- pertes&#45;&gt;parametres -->
+<g id="edge6" class="edge">
+<title>pertes&#45;&gt;parametres</title>
+<path fill="none" stroke="black" d="M459.28,-66.96C446.74,-53.53 426.89,-35.34 405.18,-27.1 304.63,11.08 176.18,0.36 104.88,-10.27" />
+<polygon fill="black" stroke="black" points="104.13,-6.84 94.78,-11.83 105.2,-13.76 104.13,-6.84" />
+<text text-anchor="middle" x="257.09" y="-6.9" font-family="Times,serif" font-size="14.00">ajustement</text>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En revanche, notre modèle est limité par:</p>
+<ul>
+<li>Les données <ul>
+<li>Leurs étendues et leurs variétés</li>
+<li>On ne peut pas entrainer de modèle sans celles-ci</li>
+</ul>
+</li>
+<li>Le modèle à besoin de données labelisées pour s'entrainer et mesurer sa performance</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Mais il faut faire attention:</p>
+<ul>
+<li>Aux rétroactions (feedback loop).</li>
+<li>Aux surapprentissage, le model peut apprendre spécifiquement le jeu de données et in fine n'etre bon que sur ce jeu de données.</li>
+<li>Aux données d'entrées, qu'elles ne soient pas extremement biaisais des le début par exemple.</li>
+<li>Aux changements d'environnement, entre l'entrainement du modèle et son utilisation.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pour recapituler, un réseau de neurones est une sorte de modèle de Machine Learning et le deep learning est un réseau de neurones avec des couches suplémentaire (&gt;2).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Stochastic-Gradient-Descent-(SGD)">Stochastic Gradient Descent (SGD)<a class="anchor-link" href="#Stochastic-Gradient-Descent-(SGD)"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Maintenant on sait à quoi servent les poids, on sait comment fonctionne le Machine Learning et on sait que les poids sont ajuster en fonction de la performance. Mais comment sont réellement ajusté les poids ?</p>
+<p>Pour trouver les valeurs à attribuer aux poids et ce de façon automatique, nous allons utiliser la Descente de Gradient Stochastique (SGD).</p>
+<p>La Descente de Gradient Stochastique, donne un poids à chaque unités d'entrées, de façon à ce que les unités d'entrées qui sont le plus probable d'avoir un impact positif sur notre résultat est un plus grand poids que celles avec une faible probabilité.</p>
+
+<pre><code>La probabilité que la prediction soit positive = la somme des unités multiplié par leurs poids respective.
+
+</code></pre>
+<p>Nous cherchons les valeurs des poids qui nous permettront d'obtenir le meilleur résultat. Il nous manque donc la manière de les améliorer. Afin de se faire nous allons réaliser quelques étapes:</p>
+<ol>
+<li>Initialisation des poids de façon aléatoire</li>
+<li>Prediction: pour chaque unités, utiliser le poids assigné pour prédire le résultat</li>
+<li>Perte: d'après ces prédictions, calculer sa performance</li>
+<li>Gradient: comment la modification des poids impact notre performance (perte)</li>
+<li>Ajustement des poids: en se basant sur le gradient</li>
+<li>Repetition: retour à l'étape 2. et renouvelement du processus</li>
+<li>Stop: arret du processus d'entrainement du modèle</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p><div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gv</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">init-&gt;prediction-&gt;perte-&gt;gradient-&gt;ajustement-&gt;stop</span>
+<span class="s1">ajustement-&gt;prediction[label=repetition]</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+</p>
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+<!-- Generated by graphviz version 2.50.0 (20211204.2007)
+ -->
+<!-- Title: G Pages: 1 -->
+<svg width="680pt" height="78pt" viewBox="0.00 0.00 679.57 78.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 74)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-74 675.57,-74 675.57,4 -4,4" />
+<!-- init -->
+<g id="node1" class="node">
+<title>init</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18" />
+<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">init</text>
+</g>
+<!-- prediction -->
+<g id="node2" class="node">
+<title>prediction</title>
+<ellipse fill="none" stroke="black" cx="137.15" cy="-18" rx="46.29" ry="18" />
+<text text-anchor="middle" x="137.15" y="-14.3" font-family="Times,serif" font-size="14.00">prediction</text>
+</g>
+<!-- init&#45;&gt;prediction -->
+<g id="edge1" class="edge">
+<title>init&#45;&gt;prediction</title>
+<path fill="none" stroke="black" d="M54.18,-18C62.26,-18 71.48,-18 80.76,-18" />
+<polygon fill="black" stroke="black" points="80.79,-21.5 90.79,-18 80.79,-14.5 80.79,-21.5" />
+</g>
+<!-- perte -->
+<g id="node3" class="node">
+<title>perte</title>
+<ellipse fill="none" stroke="black" cx="248.89" cy="-52" rx="28.7" ry="18" />
+<text text-anchor="middle" x="248.89" y="-48.3" font-family="Times,serif" font-size="14.00">perte</text>
+</g>
+<!-- prediction&#45;&gt;perte -->
+<g id="edge2" class="edge">
+<title>prediction&#45;&gt;perte</title>
+<path fill="none" stroke="black" d="M173.78,-29.04C186.42,-32.96 200.62,-37.36 213.19,-41.25" />
+<polygon fill="black" stroke="black" points="212.26,-44.63 222.85,-44.24 214.33,-37.94 212.26,-44.63" />
+</g>
+<!-- gradient -->
+<g id="node4" class="node">
+<title>gradient</title>
+<ellipse fill="none" stroke="black" cx="405.13" cy="-52" rx="39.79" ry="18" />
+<text text-anchor="middle" x="405.13" y="-48.3" font-family="Times,serif" font-size="14.00">gradient</text>
+</g>
+<!-- perte&#45;&gt;gradient -->
+<g id="edge3" class="edge">
+<title>perte&#45;&gt;gradient</title>
+<path fill="none" stroke="black" d="M277.82,-52C299.34,-52 329.62,-52 355.14,-52" />
+<polygon fill="black" stroke="black" points="355.39,-55.5 365.39,-52 355.39,-48.5 355.39,-55.5" />
+</g>
+<!-- ajustement -->
+<g id="node5" class="node">
+<title>ajustement</title>
+<ellipse fill="none" stroke="black" cx="531.18" cy="-18" rx="49.29" ry="18" />
+<text text-anchor="middle" x="531.18" y="-14.3" font-family="Times,serif" font-size="14.00">ajustement</text>
+</g>
+<!-- gradient&#45;&gt;ajustement -->
+<g id="edge4" class="edge">
+<title>gradient&#45;&gt;ajustement</title>
+<path fill="none" stroke="black" d="M439.37,-42.89C452.19,-39.37 467.12,-35.28 481.13,-31.44" />
+<polygon fill="black" stroke="black" points="482.4,-34.73 491.12,-28.71 480.55,-27.97 482.4,-34.73" />
+</g>
+<!-- ajustement&#45;&gt;prediction -->
+<g id="edge6" class="edge">
+<title>ajustement&#45;&gt;prediction</title>
+<path fill="none" stroke="black" d="M481.56,-18C408.55,-18 270.96,-18 193.95,-18" />
+<polygon fill="black" stroke="black" points="193.5,-14.5 183.5,-18 193.5,-21.5 193.5,-14.5" />
+<text text-anchor="middle" x="321.49" y="-21.8" font-family="Times,serif" font-size="14.00">repetition</text>
+</g>
+<!-- stop -->
+<g id="node6" class="node">
+<title>stop</title>
+<ellipse fill="none" stroke="black" cx="644.57" cy="-18" rx="27" ry="18" />
+<text text-anchor="middle" x="644.57" y="-14.3" font-family="Times,serif" font-size="14.00">stop</text>
+</g>
+<!-- ajustement&#45;&gt;stop -->
+<g id="edge5" class="edge">
+<title>ajustement&#45;&gt;stop</title>
+<path fill="none" stroke="black" d="M580.71,-18C589.71,-18 598.97,-18 607.52,-18" />
+<polygon fill="black" stroke="black" points="607.53,-21.5 617.53,-18 607.53,-14.5 607.53,-21.5" />
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Le-gradient">Le gradient<a class="anchor-link" href="#Le-gradient"> </a></h2><p>L'objectif du Gradient est d'optimiser notre perte en modifiant les poids attribué aux parametres. Ce qui se passe durant 5. l'ajustement. Pour ce faire le Gradient calcul la dérivée.</p>
+<p>La dérivée calcul le changement plutot que la valeur. Elle nous indique à quelle vitesse (%) un changement a lieu entre les valeurs sous-jacente. Plus spécifiquement elle est égale à :</p>
+
+<pre><code>Le changement de valeur dans la fonction / par le changement de valeur dans les parametres
+
+</code></pre>
+<p>Lorsque l'on sait comment la valeur va changer, nous savons comment l'optimiser. Une fonction à plusieurs poids (pour chaque entrées) qui doivent etre ajuster, ce qui résulte en autant de gradient qu'il y a de poids. Pour ce faire, le gradient calcul la dérivé d'un poids et traite toute les autres comme des constantes, et ce pour chaque poids.</p>
+<p>Ici réside la clef de l'optimisation d'un modèle de Machine Learning.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Taux-d'apprentissage">Taux d'apprentissage<a class="anchor-link" href="#Taux-d'apprentissage"> </a></h2><p>Le taux d'apprentissage permet de décidé comment les parametres (poids) vont changer par rapport au gradient. C'est à dire que l'on va muliplié le taux d'apprentissage par le gradient pour obtenir notre ajustement. Comme nous souhaitons minimiser notre perte, nous allons soustraire ce calcul au parametres pour les optimiser. Ceci nous permet d'ajuster les parametres dans la direction du zéro. Ainsi augmentant les parametres lorsque la direction est négative et les baissant lorsque la direction est positive. Le but est d'atteindre une perte la plus proche de zéro.</p>
+
+<pre><code>poids -= gradient(poids) * taux d'apprentissage
+
+</code></pre>
+<p>Cela s'appelle l'étape d'optimisation. Le choix du taux d'apprentissage, aura un grand impact sur cette étape. Un faible taux d'apprentissage, rendra le modèle lent dans son apprentissage alors qu'un taux d'apprentissage trop élevé peut résulté en une performance qui regresse ou divergente.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exemple-d'un-mod&#232;le-&#224;-l'aide-de-la-Descente-de-Gradient">Exemple d'un mod&#232;le &#224; l'aide de la Descente de Gradient<a class="anchor-link" href="#Exemple-d'un-mod&#232;le-&#224;-l'aide-de-la-Descente-de-Gradient"> </a></h2><p>Nous allons créer un gradient pour trouver la valeur minimal.</p>
+<p>Dans cette exemple, nous mesurons la vitesse des voitures qui circulent sur le périphérique parisien chaque heure d'une journée.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+<span class="n">temps</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensor([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10., 11., 12., 13., 14., 15., 16., 17., 18., 19., 20., 21., 22., 23., 24.])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vitesse</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">0.85</span><span class="o">*</span><span class="p">(</span><span class="n">temps</span><span class="o">-</span><span class="mi">11</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Voici le rendu, il semble y avoir des bouchons entre 10h et 15h, et que le traffic devient plus fluide après 20h. Il n'est pas facile de déterminer a quelle vitesse roulait une voiture à une heure précise. En utilisant la Descente de Gradient, on peu estimer à l'aide de la fonction quadratique: a<em> (temps** 2)+ (b</em> temps) +c.</p>
+<p>Nous cherchons à distinguer entre: les entrées (le l'heure (temps) à laquelle nous mesurons la vitesse des voitures) et ces parametres (la valeur qui défini quelle quadratique nous essayons). Pour ce faire nous collectons les parametres dans un unique argument afin de séparé le temps (t) et les parametres (params).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fonction</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En d'autre mots, nous avons restreint le probleme, à la recherche de la meilleur fonction quadratique (a,b,c). Nous devons donc simplement trouver quels sont les meilleurs valeurs pour a, b et c.</p>
+<p>Le procédé est le même pour les autres cas, nous cherchons la valeurs des parametres. A cette fin, nous utilison la fonction de 'perte' qui nous retournera une valeur basé sur la différence entre la prédiction et la cible (ici la vitesse), où une faible 'perte' nous donnera une "meilleur" performance.</p>
+<p>Dans ce cas, la fonction de 'perte' est l'erreur quadratic moyenne (mean squared error) car il s'agit de données continues (numérique)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mse</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">cibles</span><span class="p">):</span> <span class="k">return</span> <span class="p">((</span><span class="n">predictions</span><span class="o">-</span><span class="n">cibles</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-Initialisation-des-parametres-(poids)">1. Initialisation des parametres (poids)<a class="anchor-link" href="#1.-Initialisation-des-parametres-(poids)"> </a></h3><p>On initialize les poids avec des valeurs aléatoire et indiquons a PyTorch que nous souhaitons retenir leurs gradients</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Pr&#233;dictions">Pr&#233;dictions<a class="anchor-link" href="#Pr&#233;dictions"> </a></h3><p>Nous calculons les prédictions du modèle en utilisant la fonction précèdemment codé.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">fonction</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Maintenant visualisons, comment notre modèle performe avec des parametres aléatoire.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">to_np</span><span class="p">(</span><span class="n">predictions</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>En bleu, sont les données cibles et en rouge les données de la prédiction. On voit clairement que le parametres ne sont pas en accord avec la cible et qu'il nous propose même des valeurs de vitesse négative.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Perte">Perte<a class="anchor-link" href="#Perte"> </a></h3><p>Nous allons mesurer la performance de notre modèle, à l'aide de la fonction mean squared error, précèdemment créer pour.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">perte</span> <span class="o">=</span> <span class="n">mse</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">)</span>
+<span class="n">perte</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensor(59678.8281, grad_fn=&lt;MeanBackward0&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notre objectif est maintenant d'améliorer ce résultat, en essayant de le diminuer au maximum. Pour cela nous allons utiliser le gradient.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Gradient">Gradient<a class="anchor-link" href="#Gradient"> </a></h3><p>Dans cette étape nous allons calculer le gradient, soit approximativement le changement nécessaire au parametres afin qu'il s'améliore.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">perte</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="n">params</span><span class="o">.</span><span class="n">grad</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensor([128103.9688,   6573.3862,    333.9178])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.backward() signifie "Back propagation". Il s'agit du processus de calcul de la dérivéee.</p>
+<p>.grad signifie gradient. Cela nous permet d'obtenir le gradient (dérivée).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Ajustement">Ajustement<a class="anchor-link" href="#Ajustement"> </a></h3><p>Maintenant que l'on connait le gradient. Nous devons le multiplié par un taux d'apprentissage afin que la machine apprenne. Dans ce cas, on choisi arbitrairement un taux d'apprentissage de 0.0001.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ta</span> <span class="o">=</span> <span class="mf">1e-5</span>
+<span class="n">params</span><span class="o">.</span><span class="n">data</span> <span class="o">-=</span> <span class="n">ta</span> <span class="o">*</span> <span class="n">params</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">data</span>
+<span class="n">params</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>.data nous permet de ne pas calculer les gradients durant l'ajustement, car on souhaite que les gradients soit calculer seulement lors de la prédiction.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Retour-&#224;-l'&#233;tape-de-pr&#233;diction">Retour &#224; l'&#233;tape de pr&#233;diction<a class="anchor-link" href="#Retour-&#224;-l'&#233;tape-de-pr&#233;diction"> </a></h3><p>Retour à l'étape 2. Prédiction, ici nous allons comparer notre résultat obtenu précedemment avec celui obtenu après avoir effectué l'ajustement.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">fonction</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="n">perte</span> <span class="o">=</span> <span class="n">mse</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">)</span>
+<span class="n">perte</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensor(11477.2236, grad_fn=&lt;MeanBackward0&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On remarque la perte à baisser et c'est ce que nous cherchions à faire! Notre modèle c'est belle et bien amélioré.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On peut aussi visualiser l'amélioration de notre modèle.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ainsi, nous pouvons créer une fonction qui permettra d'effectuer toute ces étapes.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ajustement</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">prn</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">fonction</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+    <span class="n">perte</span> <span class="o">=</span> <span class="n">mse</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">vitesse</span><span class="p">)</span>
+    <span class="n">perte</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">params</span><span class="o">.</span><span class="n">data</span> <span class="o">-=</span> <span class="n">ta</span> <span class="o">*</span> <span class="n">params</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">params</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">prn</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">perte</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">predictions</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Faisons le plusieurs fois, pour voir si notre modèle s'améliore. Lorsque l'on défini combien d'ajustement le modèle va effectuer avant de s'arreter, cela s'appelle une <strong>epoch</strong>. Dans le cas suivant, il y a 5 <strong>epochs</strong>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span> <span class="n">ajustement</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>11477.2236328125
+3211.542724609375
+1794.1199951171875
+1551.0457763671875
+1509.349853515625
+1502.18701171875
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pour-r&#233;sumer">Pour r&#233;sumer<a class="anchor-link" href="#Pour-r&#233;sumer"> </a></h2><p>Les poids de notre modèle peuvent etre choisi de façon aléatoire ou bien venir d'un modèle pré-entrainé (transfert learning). Le modèle devra alors apprendre pour trouver de meilleur poids.</p>
+<p>A cette fin, on compare les prédictions du modèle avec les cibles (labels) à l'aide de la fonction 'perte'. Cette perte doit etre le plus proche de zéro possible.</p>
+<p>Nos poids doivent etre amélioré, on le fait en fournissant au modèle des données. Après avoir passer les étapes du modèle, on obtient une 'perte', cette perte nous indique "de combien le modèle à faux" puis on change les poids pour obtenir un meilleur résultat.</p>
+<p>Pour trouver comment changer les poids, on utilise le gradient (la dériviée), celui-ci est multiplié par un taux d'apprentissage (ampleur de l'apprentissage) qui nous donne alors la direction et l'amplitude de l'ajustement des poids.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Les-sp&#233;cificit&#233;s">Les sp&#233;cificit&#233;s<a class="anchor-link" href="#Les-sp&#233;cificit&#233;s"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Utilisation-du-Deep-Learning">Utilisation du Deep Learning<a class="anchor-link" href="#Utilisation-du-Deep-Learning"> </a></h2><p>Le Deep Learning peut etre utiliser pour remplir différentes tâches:</p>
+<ul>
+<li>Vision : Detection et Classification d'images</li>
+<li>Texte : Classification (analyse du sentiment), Génération de texte et Traduction</li>
+<li>Tableau : Classification (Travail avec beaucoup de données numérique) </li>
+<li>"Recommendation" : Prédiction du prochain achat par ex. (différent de proposition</li>
+<li>Multi-modal : Mix des precedentes catégories </li>
+<li>Autres : Il existe de nombreuse possibilités en utilisant le Deep Learning pour completé une tâche.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Classification-et-Regression">Classification et Regression<a class="anchor-link" href="#Classification-et-Regression"> </a></h2><p>Les deux types de modèle principaux sont la classification et la regression.</p>
+<p>Le modèle de classification prédit une catégorie (ex, un chat ou un chien).</p>
+<p>Différent d'une Regression Linéaire, le modèle de Regression prédit une ou plusieurs valeurs numérique (ex, une température)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Le-mod&#232;le-basic">Le mod&#232;le basic<a class="anchor-link" href="#Le-mod&#232;le-basic"> </a></h2><p>Parfois un simple modèle basic, facile à construire, est plus performant qu'un modèle de Deep Learning. De plus ce modèle basic, permet de comparer les résultats du modèle de Deep Learning avec un autre modèle. Avant de commencer, il faut construire ce modèle basic afin d'essayer de trouver une solution qui soit claire et qui fournisse un résultat proche de celui espéré avec le Machine Learning.</p>
+<p>Le modèle basic doit etre simple, il peut être constituer en quelques calculs mathématiques, en revanche le modèle basic ce veut plus performant qu'un modèle qui résulte de façon aléatoire. Et bien évidemment, ce n'est pas un modèle utilisant le Machine Learning.</p>
+<p>Souvent un modèle basic, va être la représentation de notre propre réflection à la question: Comment prédire efficacement le résultat ?</p>
+<p>Ex: Prédire le prix d'un certain produit ? On calcul le prix moyen des produits de la même catégorie</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="La-validation-du-mod&#232;le-(metric)">La validation du mod&#232;le (metric)<a class="anchor-link" href="#La-validation-du-mod&#232;le-(metric)"> </a></h2><p>Maintenant que nous savons comment entrainer un modèle, comment savoir si celui-ci est réellement performant?</p>
+<p>Pour cela, il faut utiliser un set de validation. Ce sont des données qui ont été mis à l'écart explicitement afin de comparer les prédictions de notre modèle avec la réalité. Ainsi on obtient, une mesure précise de la performance.</p>
+<p>Mais quelle est la différence entre la perte et la metric ?</p>
+<p>La différence réside dans le fait que la metric aide l'humain à comprendre la performance du modèle alors que la <strong>perte</strong> aide la machine à apprendre de ces erreurs.</p>
+<p>La metric est la valeur dont nous nous soucions réellement, c'est la mesure qui nous indique comment le modèle performe réellement.</p>
+<p>La perte doit être choisi de sorte à avoir une dérivée qui réagi a l'ajustement des parametres.</p>
+<p>la metric va comparer</p>
+<ul>
+<li>La mesure de la performance du modèle comparant la prédiction avec un jeu de données "valide" s'appele la "metric" (in fine c'est la mesure en laquelle l'homme juge la performance du modèle)</li>
+<li>Le jeu de données valide (validation set) est un jeu de données mis à l'écart lors de l'entrainement, il permet de vérifier la performance du modèle (metric) et ne contient aucune données utilisé lors de l'entrainement.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Le-transfert-learning">Le transfert learning<a class="anchor-link" href="#Le-transfert-learning"> </a></h2><p>Le transfert learning, nous permet d'utiliser un modèle qui a déja été entrainé (sur d'autres données proche des notres). Le modèle possèdent alors des parametres prochent de ceux que nous souhaitons obtenir pour notre prédiction.</p>
+<p>Nous pouvons alors rapidement ré-entrainer ce modèle sur nos données pour obtenir un "meilleur" résultat qu'un nouveau modèle. Ce n'est pas nécessairement le cas (bien que souvent), mais cette aspect à la faculté d'etre bien plus rapide. Cette technique permet d'entrainé un modèle lorsque l'on à peu de données ou bien peu de capacité de calcul (pour l'entrainement du modèle).</p>
+<p>Au lieu d'utiliser des parametres choisi de façon aléatoire, les paramatres du modèle pré-entrainé sont proches de ceux que nous souhaitons obtenir.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"> </a></h1><p>Dans ce rapport, nous avons vu l'histoire du Machine Learning, du Deep Learning et des Reseau de Neurones. Nous avons appris à les différencier et compris comment ils étaient relié. Nous savons comment la machine est capable d'apprendre et de s'améliorer. Ce rapport constitue les fondations pour aller de l'avant et commencer à pousser l'apprentissage plus loin.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/pages/2022/05/27/P8-Rapport.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/pages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/pages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/pages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Explorer la data science</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/pages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/pages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
